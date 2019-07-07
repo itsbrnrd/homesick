@@ -1,0 +1,30 @@
+[user]
+	name = Mathieu Bernard
+	email = mathieu@brnrd.fr
+
+[color]
+	ui = true
+
+[core]
+	editor = vim
+
+[push]
+	default = simple
+
+[pull]
+	rebase = true
+
+[rebase]
+	autostash = true
+
+[alias]
+	a  = add
+	aa = add -A
+	c  = commit
+	ca = commit --ammend
+	co = checkout
+	cb = checkout -b
+	d  = diff
+	ds = diff --staged
+	s  = status
+

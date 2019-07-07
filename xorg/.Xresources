@@ -1,0 +1,69 @@
+/* X-org */
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+
+/* theme */
+*background: #1C1E26
+*foreground: #ECF0F1
+*cursorColor: #ECF0F1
+
+! black
+*color0: #2E303E
+*color8: #2E303E
+! red
+*color1: #E95678
+*color9: #E95678
+! green
+*color2: #29D398
+*color10: #29D398
+! yellow
+*color3: #F09383
+*color11: #F09383
+! blue
+*color4: #22A7F0
+*color12: #22A7F0
+! magenta
+*color5: #B877DB
+*color13: #B877DB
+! cyan
+*color6: #59E3E3
+*color14: #59E3E3
+! white
+*color7: #ECF0F1
+*color15: #ECF0F1
+
+/* appearance */
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.internalBorder: 24
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.cursorBlink: true
+URxvt.saveLines: 10000
+URxvt.urgentOnBell: true
+! for Ctrl+Shift bindings to work
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.fading: 20
+
+/* extensions */
+URxvt.perl-ext-common: default,matcher,clipboard
+
+/* clickable URLs */
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg7
+
+/* key bindings */
+URxvt.clipboard.autocopy: true
+URxvt.keysym.Control-Alt-c: perl:clipboard:copy
+URxvt.keysym.Control-Alt-v: perl:clipboard:paste
+
+/* fonts */
+URxvt.font: xft:Hack-Regular:pixelsize=14
+URxvt.bolFont: xft:Hack-Bold:pixelsize=14:weight=bold
+URxvt.italicFont: xft:Hack-RegularOblique:pixelsize=14:slant=italic

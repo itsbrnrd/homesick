@@ -1,0 +1,8 @@
+#Audio language priority
+alang=ja,jp,jpn,en,eng,fr,fra
+
+#Subtitle language priority
+slang=en,eng,fr,fra
+
+# Youtube-DL
+ytdl-format="bestvideo[height<=?1080]+bestaudio/best"

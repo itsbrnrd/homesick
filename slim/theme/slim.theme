@@ -1,0 +1,31 @@
+msg_color               #ECF0F1
+msg_font                Hack:size=13:dpi=96
+msg_x                   50%
+msg_y                   40%
+msg_shadow_xoffset      1
+msg_shadow_yoffset      1
+
+background_style        tile
+background_color        #1A1C23
+
+input_panel_x           50%
+input_panel_y           50%
+input_name_x            200
+input_name_y            90
+input_font          	Hack:size=13:dpi=96
+input_fgcolor           #ECF0F1
+input_color		        #ECF0F1
+
+username_msg            username:
+username_font          	Hack:size=13:dpi=96
+username_color        	#6C6F93
+username_x              100
+username_y              90
+
+password_msg            password:
+password_font          	Hack:size=13:dpi=96
+password_color          #6C6F93
+password_x              100
+password_y              90
+
+session_color            #1A1C23

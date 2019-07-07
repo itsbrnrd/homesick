@@ -1,0 +1,26 @@
+rofi.modi: combi
+! use # instead of , to separate modes
+rofi.combi-modi: drun
+rofi.font: hack 10
+
+! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+rofi.color-window: #232530, #6c6F93, #232530, #ffff00, #ff00ff
+rofi.color-normal: #232530, #ECF0F1, #232530, #22A7F0, #ECF0F1
+rofi.color-active: #E95678, #ECF0F1, #232530,   #22A7F0, #ECF0F1
+rofi.width: 30
+rofi.lines: 7
+rofi.columns: 1
+rofi.font: Hack 12
+rofi.bw: 0
+rofi.eh: 1
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+
+rofi.bw: 4
+rofi.padding: 20
+
+rofi.levenshtein-sort: true
+
+rofi.display-combi:
+
+rofi.combi-hide-mode-prefix: true

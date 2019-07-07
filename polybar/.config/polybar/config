@@ -1,0 +1,173 @@
+[settings]
+	screenchange-reload = true
+
+[bar/polypocket]
+	; polybar -m | cut -d ':' -f 1
+	monitor = eDP-1
+    dpi = 96
+
+	bottom = false
+	fixed-center = true
+
+	width = 100%
+	height = 40
+
+	offset-x = 0
+	offset-y = 0
+
+	background = #1A1C23
+
+	line-size = 2
+	line-color = #ECF0F1
+
+	padding-right = 2
+	module-margin = 1
+
+	font-0 = Hack:bold:size=10;3
+	; echo -ne "\uf142" | xclip -selection clipboard
+	font-1 = FontAwesome5Free:style=Solid:size=10;3
+
+	modules-left = i3
+	modules-center =
+	modules-right = wireless-network sep sound sep battery sep date
+
+	dpi-x = 135
+	dpi-y = 135
+
+	enable-ipc = false
+
+[module/i3]
+	type = internal/i3
+
+	pin-workspaces = true
+	strip-wsnumbers = true
+	index-sort = true
+
+	enable-click = true
+	enable-scroll = false
+	wrapping-scroll = false
+	reverse-scroll = false
+
+	fuzzy-match = true
+
+	label-unfocused = %index%
+	label-unfocused-padding = 1
+	label-unfocused-foreground = #ECF0F1
+
+	label-focused = %index%
+	label-focused-foreground = #ECF0F1
+
+	label-focused-underline = #ECF0F1
+	label-focused-padding = 1
+
+[module/sound]
+	type = internal/alsa
+	format-volume = <ramp-volume> <label-volume>
+
+	label-volume = %percentage:3%%
+	label-volume-foreground = #ECF0F1
+
+	label-muted =  muted
+	label-muted-foreground = #6C6F93
+
+	ramp-volume-0 = 
+	ramp-volume-1 = 
+	ramp-volume-2 = 
+
+	ramp-headphones-0 = 
+	ramp-headphones-1 = 
+
+[module/date]
+	type = internal/date
+
+	interval = 1.0
+
+	date = %Y-%m-%d%
+	time = %H:%M
+
+	date-alt = %A, %d %B %Y
+	time-alt = %H:%M:%S
+
+	label = %date% %time%
+	label-font = 0
+	label-foreground = #ECF0F1
+
+[module/wireless-network]
+	type = internal/network
+	interface = wlp0s20f3
+
+	label-connected = %essid%
+	format-connected = %{A1:~/bin/rofi-wifi-menu/rofi-wifi-menu.sh:}<ramp-signal> <label-connected>%{A}
+	label-connected-foreground = #29D398
+
+	format-disconnected = %{A1:~/bin/rofi-wifi-menu/rofi-wifi-menu.sh:}<label-disconnected>%{A}
+	label-disconnected = Not connected
+	label-disconnected-foreground = #E73665
+
+	ramp-signal-foreground = #29D398
+	ramp-signal-0 = 
+	ramp-signal-1 = 
+	ramp-signal-2 = 
+	ramp-signal-3 = 
+	ramp-signal-4 = 
+	ramp-signal-5 = 
+
+[module/battery]
+	type = internal/battery
+
+	full-at = 99
+
+	; List batteries and adapters:
+	; ls -1 /sys/class/power_supply/
+	battery = BAT0
+	adapter = AC
+
+	poll-interval = 5
+
+	time-format = %H:%M
+
+	format-charging = <animation-charging> <label-charging>
+	format-discharging = <ramp-capacity> <label-discharging>
+	format-full = <ramp-capacity> <label-full>
+
+	label-charging = %percentage:2%%
+	label-charging-foreground = #29D398
+
+	label-discharging = %percentage:2%%
+	label-discharging-foreground = #E95678
+
+	label-full = %percentage:2%%
+	label-full-foreground = #E95678
+
+	ramp-capacity-0 = 
+	ramp-capacity-1 = 
+	ramp-capacity-2 = 
+	ramp-capacity-3 = 
+	ramp-capacity-4 = 
+	ramp-capacity-foreground = #E95678
+
+	bar-capacity-width = 10
+
+	animation-charging-0 = 
+	animation-charging-1 = 
+	animation-charging-2 = 
+	animation-charging-3 = 
+	animation-charging-4 = 
+	animation-charging-foreground = #29D398
+	; in milliseconds
+	animation-charging-framerate = 750
+
+	animation-discharging-0 = 
+	animation-discharging-1 = 
+	animation-discharging-2 = 
+	animation-discharging-3 = 
+	animation-discharging-4 = 
+	animation-discharging-foreground = #E95678
+	; in milliseconds
+	animation-discharging-framerate = 500
+
+[module/sep]
+	type = custom/text
+	content-foreground = #6C6F93
+	margin = 0
+	content = ":"
