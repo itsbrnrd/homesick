@@ -7,5 +7,6 @@
     ./networking.nix
     ./power-management.nix
     ./xorg.nix
+    ./keybase.nix
   ];
 }
