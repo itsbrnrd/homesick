@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/zsh
+#!/usr/bin/env zsh
 
 # https://unix.stackexchange.com/a/213471
 
