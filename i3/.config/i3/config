@@ -145,6 +145,14 @@ bindsym $mod+Ctrl+Print exec --no-startup-id scrot -e 'xclip -selection c -t ima
 
 bindsym $mod+Delete exec --no-startup-id slimlock
 
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioMicMute exec --no-startup-id amixer set Capture toggle
+
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
