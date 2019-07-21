@@ -1,14 +1,17 @@
 # Plugins
 # -------
 
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+
 # zsh-shrink-path
 source ~/.zsh/plugins/zsh-shrink-path/zsh-shrink-path.plugin.zsh
 zstyle :prompt:shrink_path fish yes
 
 # zsh-completions
 fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
-autoload -Uz compinit
 zstyle ':completion:*' menu select
+autoload -Uz compinit && compinit
 
 # zsh-autosuggestions
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
