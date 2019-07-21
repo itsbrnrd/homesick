@@ -1,23 +1,26 @@
 # Plugins
 # -------
 
+fpath=(~/.zsh $fpath)
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+
 # zsh-shrink-path
-source ~/homesick/zsh/plugins/zsh-shrink-path/zsh-shrink-path.plugin.zsh
+source ~/.zsh/plugins/zsh-shrink-path/zsh-shrink-path.plugin.zsh
 zstyle :prompt:shrink_path fish yes
 
 # zsh-completions
-fpath=(~/homesick/zsh/plugins/zsh-completions/src $fpath)
-autoload -Uz compinit
+fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 zstyle ':completion:*' menu select
+autoload -Uz compinit && compinit
 
 # zsh-autosuggestions
-source ~/homesick/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting
-source ~/homesick/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-history-substring-search
-source  ~/homesick/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source  ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
