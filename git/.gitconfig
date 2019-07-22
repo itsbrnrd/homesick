@@ -27,4 +27,7 @@
 	d  = diff
 	ds = diff --staged
 	s  = status
+	l = log
 
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
