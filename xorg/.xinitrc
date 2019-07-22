@@ -40,6 +40,8 @@ if [ -f "$HOME/.background-image" ] ; then
 	feh --bg-scale $HOME/.background-image
 fi
 
+xss-lock -- /usr/bin/slimlock &
+
 if [ -f "/usr/bin/i3" ]; then
 	exec i3
 fi
