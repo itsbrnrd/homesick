@@ -149,6 +149,5 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 # Path
 # ----
 
-[ -d "$HOME/bin" ] && export PATH=$HOME/bin:$PATH
-[ -d "$HOME/.rbenv" ] && export PATH=$HOME/.rbenv/bin:$PATH
-[ -d "$HOME/.rbenv" ] && eval "$(rbenv init -)"
+test -r "$HOME/bin" && export PATH=$HOME/bin:$PATH
+test -r "$HOME/.rbenv" && eval "$(rbenv init -)"
