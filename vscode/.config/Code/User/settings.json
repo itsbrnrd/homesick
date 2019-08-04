@@ -8,5 +8,6 @@
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "window.zoomLevel": 0,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "'Hack'"
 }
