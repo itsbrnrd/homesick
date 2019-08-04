@@ -96,7 +96,7 @@
 	type = internal/network
 	interface = wlp0s20f3
 
-	label-connected = %essid%
+	label-connected = %essid% (%signal%%)
 	format-connected = %{A1:~/bin/rofi-wifi-menu/rofi-wifi-menu.sh:}<ramp-signal> <label-connected>%{A}
 	label-connected-foreground = #29D398
 
