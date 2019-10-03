@@ -24,13 +24,15 @@ source  ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+# fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # Key bindings
 # ------------
 
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
-bindkey "^R" history-incremental-search-backward
 
 ## use Ctrl-left-arrow and Ctrl-right-arrow for jumping to word-beginnings
 bindkey '^[Oc' forward-word
@@ -102,7 +104,6 @@ function +vi-git-st() {
 # Prompt
 # ------
 
-# Some signs: ✚ ⬆ ⬇ ✖ ✱ ➜ ✭ ═ ◼ ♺ ❮ ❯ λ ➣ ⇥ ➤ » ▶ ᐅ ▸ ~ > ⇒ ✹ ✔ ✘ | ♥︎ ❤︎ ❥
 PROMPT='%F{magenta}%n%f at %F{blue}%m%f in %F{cyan}$(shrink_path)%f ${vcs_info_msg_0_}
 $ '
 precmd() {
@@ -122,9 +123,6 @@ alias ll='l'
 alias la='l -a'
 
 alias grep='grep --color'
-
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
@@ -151,3 +149,4 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 
 test -r "$HOME/bin" && export PATH=$HOME/bin:$PATH
 test -r "$HOME/.rbenv" && eval "$(rbenv init -)"
+
