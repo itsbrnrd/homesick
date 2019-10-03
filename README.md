@@ -56,7 +56,8 @@ git submodule update --init --recursive
 
 and then
 ```
-stow extra git i3 nixpkgs polybar rofi slim vscode xorg zsh
+stow extra git i3 polybar rofi vscode xorg zsh
+sudo stow slim -t /
 ```
 
 ## Features
