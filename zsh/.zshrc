@@ -1,28 +1,26 @@
 # Plugins
 # -------
 
-fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+source ~/.zplug/init.zsh
 
-# zsh-shrink-path
-source ~/.zsh/plugins/zsh-shrink-path/zsh-shrink-path.plugin.zsh
-zstyle :prompt:shrink_path fish yes
+zplug "agkozak/zsh-z"
+zplug "plugins/shrink-path", from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
 
-# zsh-completions
-fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
+# zsh completions
+zplug "zsh-users/zsh-completions"
 zstyle ':completion:*' menu select
 autoload -Uz compinit && compinit
 
-# zsh-autosuggestions
-source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
-# zsh-syntax-highlighting
-source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# zsh-history-substring-search
-source  ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+zplug load
 
 # fzf
 source /usr/share/fzf/key-bindings.zsh
@@ -104,7 +102,7 @@ function +vi-git-st() {
 # Prompt
 # ------
 
-PROMPT='%F{magenta}%n%f at %F{blue}%m%f in %F{cyan}$(shrink_path)%f ${vcs_info_msg_0_}
+PROMPT='%F{magenta}%n%f at %F{blue}%m%f in %F{cyan}$(shrink_path -f)%f ${vcs_info_msg_0_}
 $ '
 precmd() {
     vcs_info
@@ -149,4 +147,3 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 
 test -r "$HOME/bin" && export PATH=$HOME/bin:$PATH
 test -r "$HOME/.rbenv" && eval "$(rbenv init -)"
-
