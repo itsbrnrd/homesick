@@ -8,5 +8,6 @@
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "'Hack'"
+    "editor.fontFamily": "'Hack'",
+    "emmet.includeLanguages": {"erb": "html"}
 }
